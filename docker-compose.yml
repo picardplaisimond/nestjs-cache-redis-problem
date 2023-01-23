@@ -1,0 +1,10 @@
+version: '1'
+
+services:
+
+  # Initialisation de Redis
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
+    restart: always
