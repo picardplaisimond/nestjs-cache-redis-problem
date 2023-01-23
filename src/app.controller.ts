@@ -15,7 +15,6 @@ export class AppController {
   @Get('/sitemap')
   @Header('Content-Type', 'application/xml')
   @Header('Content-Encoding', 'gzip')
-  @UseInterceptors(CacheInterceptor)
   async getSitemap(): Promise<StreamableFile> {
     const xml = await this.appService.getSitemapBuffer();
     return new StreamableFile(xml);

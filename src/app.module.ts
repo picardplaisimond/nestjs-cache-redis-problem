@@ -8,7 +8,7 @@ import { redisStore } from 'cache-manager-redis-yet';
     CacheModule.registerAsync({
       useFactory: async () => ({
         store: await redisStore({
-          ttl: 5000,
+          ttl: 60 * 60 * 1000,
           socket: {
             host: "localhost",
             port: 6379,
